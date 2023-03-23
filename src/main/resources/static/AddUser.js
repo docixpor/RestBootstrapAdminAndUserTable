@@ -32,3 +32,22 @@ function addUser() {
         });
     });
 }
+
+function loadRolesAdd() {
+    let select = document.getElementById("roleAdd");
+    select.innerHTML = "";
+
+    fetch("http://localhost:8080/admin/roles")
+        .then(res => res.json())
+        .then(data => {
+            data.forEach(role => {
+                let option = document.createElement("option");
+                option.value = role.id;
+                option.text = role.role === "ROLE_USER" ? "USER" : role.role === "ROLE_ADMIN" ? "ADMIN" : role.name;
+                select.appendChild(option);
+            });
+        })
+        .catch(error => console.error(error));
+}
+
+window.addEventListener("load", loadRolesAdd);

@@ -4,6 +4,7 @@ deleteUser();
 async function deleteModalData(id) {
     const modal = new bootstrap.Modal(document.querySelector('#deleteModal'));
     await theModal(formDelete, modal, id);
+
     switch (formDelete.roles.value) {
         case '1':
             formDelete.roles.value = 'ADMIN';
@@ -12,17 +13,6 @@ async function deleteModalData(id) {
             formDelete.roles.value = 'USER';
             break;
     }
-}
-
-async function getUserRoles(userId) {
-    const response = await fetch(`http://localhost:8080/users/${userId}/roles`, {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    });
-    const roles = await response.json();
-    return roles;
 }
 
 function deleteUser() {
@@ -39,3 +29,23 @@ function deleteUser() {
         });
     });
 }
+
+function loadRolesDelete() {
+    let select = document.getElementById("roleDelete");
+    select.innerHTML = "";
+
+    fetch("http://localhost:8080/admin/roles")
+        .then(res => res.json())
+        .then(data => {
+            data.forEach(role => {
+                let option = document.createElement("option");
+                option.value = role.id;
+                option.text = role.role === "ROLE_USER" ? "USER" : role.role === "ROLE_ADMIN" ? "ADMIN" : role.name;
+                select.appendChild(option);
+            });
+        })
+        .catch(error => console.error(error));
+}
+
+window.addEventListener("load", loadRolesDelete);
+

@@ -116,15 +116,11 @@
                                                                placeholder="Password"
                                                                style="width:25vh; margin-left:auto; margin-right:auto">
                                                     </div>
-                                                    <div class="form-group text-center"
-                                                         style="width:25vh; margin-left:auto; margin-right:auto">
+                                                    <div class="form-group text-center" style="width: 25vh; margin-left: auto; margin-right: auto;">
                                                         <label for="roleEdit" class="mb-0"><b>Role</b></label>
-                                                        <select multiple size="2" class="custom-select"
-                                                                name="roles" id="roleEdit">
-                                                            <option value="1">USER</option>
-                                                            <option value="2">ADMIN</option>
-                                                        </select>
+                                                        <select multiple size="2" class="custom-select" name="roles" id="roleEdit"></select>
                                                     </div>
+
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-sm btn-secondary"
@@ -187,12 +183,10 @@
                                                     </div>
                                                     <div class="form-group text-center"
                                                          style="width:25vh; margin-left:auto; margin-right:auto">
-                                                        <label for="role2" class="mb-0"><b>Role</b></label>
-                                                        <select multiple size="2" class="custom-select"
-                                                                name="roles" id="role2" disabled>
-                                                            <option value="1">USER</option>
-                                                            <option value="2">ADMIN</option>
-                                                        </select>
+                                                        <div class="form-group text-center" style="width: 25vh; margin-left: auto; margin-right: auto;">
+                                                            <label for="roleDelete" class="mb-0"><b>Role</b></label>
+                                                            <select multiple size="2" class="custom-select" name="roles" disabled id="roleDelete"></select>
+                                                        </div>
                                                     </div>
                                                 </div>
                                                 <div class="modal-footer">
@@ -235,12 +229,9 @@
                                         <input type="text" class="form-control" id="password"
                                                placeholder="Password">
                                     </div>
-                                    <div class="form-group text-center">
-                                        <label for="role" class="mb-0"><b>Role</b></label>
-                                        <select multiple size="2" class="custom-select" name="roles" id="role">
-                                            <option value="1">USER</option>
-                                            <option value="2">ADMIN</option>
-                                        </select>
+                                    <div class="form-group text-center" style="width: 25vh; margin-left: auto; margin-right: auto;">
+                                        <label for="roleAdd" class="mb-0"><b>Role</b></label>
+                                        <select multiple size="2" class="custom-select" name="roles" id="roleAdd"></select>
                                     </div>
                                     <div class="col text-center">
                                         <input type="submit" class="btn btn-success btn-lg" value="Add new user">
@@ -272,6 +263,5 @@
 <script type="text/javascript" src="../static/TableOfAllUsers.js"></script>
 <script type="text/javascript" src="../static/AddUser.js"></script>
 <script type="text/javascript" src="../static/ShowUserInfo.js"></script>
-
 </body>
 </html>
